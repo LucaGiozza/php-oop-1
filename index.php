@@ -35,6 +35,8 @@ class Movie {
 
     public function calcoloPrezzo($prezzo_scontato){
 
+        // se la durata del film è inferiore alle 1.5 ore, il prezzo del biglietto è scontato
+
         if($this->durata_film < 1.5){
             $this->prezzo_biglietto = $prezzo_scontato * 0.2;
         }
@@ -48,6 +50,7 @@ $film = new Movie('Harry Potter', 'J.K.Rowling','Fantasy');
 $film->setMovie(1.4);
 var_dump($film);
 
+// stampo a schermo i valori delle due proprietà, scrivendo durata del film e conseguente prezzo del biglietto scontato
 $tempoFilm = $film->getMovie();
 echo 'La durata del film è : ' . ' ' .  $tempoFilm . ' ' . 'ore';
 
@@ -56,3 +59,4 @@ $calcolo_prezzo = $film->calcoloPrezzo(20);
 
 $prezzo_finale = 20 - $calcolo_prezzo;
 echo 'il prezzo totale(sconto compreso) è di :'. ' ' . $prezzo_finale . '$';
+
